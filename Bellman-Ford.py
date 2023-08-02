@@ -67,52 +67,26 @@ if __name__ == "__main__":
     node4 = Node('D')
     node5 = Node('E')
     node6 = Node('F')
-    node7 = Node('G')
-    edge1 = Edges(node1,5,node2)
-    edge2 = Edges(node1,9,node5)
-    edge3 = Edges(node2,5,node5)
-    edge4 = Edges(node2,12,node3)
-    edge5 = Edges(node2,7,node4)
-    edge6 = Edges(node3,3,node4)
-    edge7 = Edges(node3,1,node6)
-    edge8 = Edges(node4,9,node7)
-    edge9 = Edges(node5,6,node3)
-    edge10 = Edges(node5,4,node6)
-    edge11 = Edges(node6,2,node7)
-    edge12 = Edges(node7,6,node3)
+    edge1 = Edges(node1,2,node2)
+    edge2 = Edges(node1,4,node4)
+    edge3 = Edges(node2,5,node3)
+    edge4 = Edges(node3,3,node4)
+    edge5 = Edges(node4,2,node5)
+    edge6 = Edges(node3,1,node6)
+    edge7 = Edges(node6,4,node5)
+
 
     node1.adjacency_list.append(edge1)
     node1.adjacency_list.append(edge2)
     node2.adjacency_list.append(edge3)
-    node2.adjacency_list.append(edge4)
-    node2.adjacency_list.append(edge5)
+    node3.adjacency_list.append(edge4)
     node3.adjacency_list.append(edge6)
-    node3.adjacency_list.append(edge7)
-    node4.adjacency_list.append(edge8)
-    node5.adjacency_list.append(edge9)
-    node5.adjacency_list.append(edge10)
-    node6.adjacency_list.append(edge11)
-    node7.adjacency_list.append(edge12)
+    node4.adjacency_list.append(edge5)
+    node6.adjacency_list.append(edge7)
 
-    vertices = [node1,node2,node3,node4,node5,node6,node7]
-    edges = (edge1,edge2,edge3,edge4,edge5,edge6,edge7,edge8,edge9,edge10,edge11,edge12)
+    vertices = [node1,node2,node3,node4,node5,node6]
+    edges = (edge1,edge2,edge3,edge4,edge5,edge6,edge7)
 
     algorithm = BellmanFordAlgorithm(vertex_list=vertices,edge_list=edges,start_vertex=node1)
-    algorithm.get_shortest_path(node7)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    algorithm.find_shortest_path()
+    algorithm.get_shortest_path(node6)
