@@ -12,24 +12,26 @@ def breadth_first_search(start_node):
     while queue:
         actual_node = queue.pop(0)  # FIFO
         actual_node.visited = True
-        print(actual_node)
+        print(actual_node.name)
         # insert the unvisited neighbors of node
         for n in actual_node.adjacency_list:
             if not n.visited:
                 queue.append(n)
 
 
-node1 = Node('d')
-node2 = Node('e')
-node3 = Node('g')
-node4 = Node('f')
-node5 = Node('r')
-node6 = Node('ds')
+if __name__ == '__main__':
+    node1 = Node('d')
+    node2 = Node('e')
+    node3 = Node('g')
+    node4 = Node('f')
+    node5 = Node('r')
+    node6 = Node('s')
 
-node1.adjacency_list.append(node2)
-node1.adjacency_list.append(node5)
-node2.adjacency_list.append(node3)
-node5.adjacency_list.append(node4)
-node4.adjacency_list.append(node6)
+    node1.adjacency_list.append(node2)
+    node1.adjacency_list.append(node3)
+    node2.adjacency_list.append(node5)
+    node2.adjacency_list.append(node6)
+    node3.adjacency_list.append(node5)
+    node5.adjacency_list.append(node4)
 
-
+    breadth_first_search(node2)
