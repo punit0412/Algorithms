@@ -90,3 +90,20 @@ if __name__ == "__main__":
     algorithm = BellmanFordAlgorithm(vertex_list=vertices,edge_list=edges,start_vertex=node1)
     algorithm.find_shortest_path()
     algorithm.get_shortest_path(node6)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
